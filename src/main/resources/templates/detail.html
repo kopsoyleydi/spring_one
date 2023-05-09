@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th = "http://www.thymeleaf.org" xmlns:layout="http://ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="main_maket.html">
+<div layout:fragment = "site">
+    <div class="row mt-5">
+        <div class="col-6 offset-3">
+            <form th:action="@{'/saveItem'}" method="post">
+                <div class="form-group mt-2">
+                    <label th:text="#{label.name}">
+                    </label>
+                    <input type="text" class="form-control" name="item_name" th:value="${item!=null?item.name:''}">
+                </div>
+                <div class="form-group mt-2">
+                <label th:text="#{label.price}">
+                </label>
+                <input type="number" class="form-control" name="item_price" th:value="${item.price}">
+                </div>
+                <div class="form-group mt-2">
+                    <button class="btn btn-primary">Add Item</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+</html>
