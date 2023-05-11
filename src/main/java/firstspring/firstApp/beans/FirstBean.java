@@ -4,8 +4,10 @@ public class FirstBean {
     private String name;
     private int age;
 
-    public FirstBean() {
+    public FirstBean(){
         System.out.println("Without param");
+        this.name = " NO name";
+        this.age = 0;
     }
     public FirstBean(String name, int age){
         System.out.println("With Param");

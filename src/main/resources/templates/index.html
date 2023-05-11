@@ -2,21 +2,23 @@
       layout:decorate="main_maket.html">
 <div layout:fragment="site">
     <div class="row mt-5">
-        <h2 th:text="${text}">
-        </h2>
         <div class="col-6 offset-3">
             <form th:action="@{'/addItem'}" method="post">
                 <div class="form-group mt-2">
-                    <label>
-                        NAME:
+                    <label th:text="#{label.name}">
                     </label>
                     <input type="text" class="form-control" name="item_name">
                 </div>
                 <div class="form-group mt-2">
-                    <label>
-                        PRICE:
+                    <label th:text="#{label.price}">
+
                     </label>
                     <input type="number" class="form-control" name="item_price">
+                </div>
+                <div class="form-group mt-2">
+                    <label th:text="#{label.amount}">
+                    </label>
+                    <input type="number" class="form-control" name="item_amount">
                 </div>
                 <div class="form-group mt-2">
                     <button class="btn btn-primary">Add Item</button>
@@ -32,6 +34,7 @@
                     <td>ID</td>
                     <td>NAME</td>
                     <td>PRICE</td>
+                    <td th:text="#{label.amount}"></td>
                     <td>DETAILS</td>
                 </tr>
                 </thead>
@@ -40,6 +43,7 @@
                     <td th:text="${it.id}"></td>
                     <td th:text="${it.name}"></td>
                     <td th:text="${it.price}"></td>
+                    <td th:text="${it.amount}"></td>
                     <td><a th:href="@{'details/' + ${it.id}}" class="btn btn-info btn-sm">DETAILS</a></td>
                 </tr>
                 </tbody>
